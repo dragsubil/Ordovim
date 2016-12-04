@@ -18,7 +18,6 @@ Ordovim consists of a Python script and a few lines of Vimscript.
 1. Clone this repository (which only consists of one Python file).
 2. Add the following lines to your .vimrc file:
 ```Vimscript
-
 function! s:OrdDecrypt()
 	! python3 /path/to/ordo.py -d  %
 	let fname=expand('%:p:r')
@@ -32,20 +31,22 @@ au BufRead *.ordo.enc call s:OrdDecrypt()
 Make sure you change `/path/to/ordo.py` in your .vimrc to the actual path to the script.
 
 
-For encryption:
+#####For encryption:
 
-    1. Open or edit the file to be encrypted with the extension `.ordo`. Close Vim or delete the buffer
-    to automatically encrypt the file.
-    2. Enter your password at the prompt.
-    3. Ensure the file you want to encrypt is in the current buffer when you close or delete the buffer.
-    Ordovim only encrypts the file in the current buffer, regardless of where your `.ordo` file is.
+1. Open or edit the file to be encrypted with the extension `.ordo`. Close Vim or delete the buffer
+to automatically encrypt the file.
+2. Enter your password at the prompt.
+3. Ensure the file you want to encrypt is in the current buffer when you close or delete the buffer.
+Ordovim only encrypts the file in the current buffer, regardless of where your `.ordo` file is.
+
 Your file will now be encrypted and saved with the extension `.ordo.enc`. The plaintext file is deleted from
 disk.
 
-For decryption:
+#####For decryption:
 
-    1. Simply open or edit the file that has the extension `.ordo.enc`.
-    2. Enter the password you used at the prompt.
+1. Simply open or edit the file that has the extension `.ordo.enc`.
+2. Enter the password you used at the prompt.
+
 Your file will now be decrypted and opened for editing as a `.ordo` file. The corresponding `.ordo.enc` file 
 is deleted after decryption.
 
