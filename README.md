@@ -29,6 +29,9 @@ endfunction
 au BufDelete,VimLeave *.ordo !python3 /path/to/ordo.py -e  %
 au BufRead *.ordo.enc call s:OrdDecrypt()
 ```
+Make sure you change `/path/to/ordo.py` in your .vimrc to the actual path to the script.
+
+
 For encryption:
 
     1. Open or edit the file to be encrypted with the extension `.ordo`. Close Vim or delete the buffer
